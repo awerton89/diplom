@@ -13,26 +13,22 @@ SkillFactory / Group45
 - Так же для автоматизации буду использовать Bash скрипты.<br>
 
 <H4> Установка и первоначальная настройка сервера <b> SRV </b> </H4>
-<b>1. Устанавливаем в Yandex Cloud сервер SRV </b> <br>
-Задача данного сервера: <br>
-a) На данном сервере будем хранить весь наш проект и управлять им. <br>
-b) Из данного сервера будем разворачивать <b> K8S cluster </b> использовать будем <b> Kubespray </b> разворачивать будем при помощи <b> Ansible </b> и управлять им при помощи <b>Kubectl и Helm </b>.<br>
-с) На данном сервере будет выполняться <b> CI/CD piplines </b>. <br>
-d) Master и Worker ноды будем разворачивать в <b> Yandex Cloud</b> при помощи <b>Terraform .</b> <br>
-e) Мониторинг SRV сервера и K8S кластера.<br>
-h) Отправка оповещаний в telegram о доступности нашего приложения.  <br> 
-<br>
+<b>1. Устанавливаем в Yandex Cloud сервер SRV </b>
+ На данном сервере будем хранить весь наш проект и управлять им, с него же будет разворачиваться кластер k8s (Kubespray) при помощи Ansible и управляться с помощью Kubectl и Helm,
+ будет производиться Мониторинг SRV сервера и K8S кластера и отправка оповещаний в telegram.
+ Также на нем будет выполняться пайплайн CI/CD.
+ Master и Worker ноды будут разворачиваться в Yandex Cloud при помощи terraform 
 <b>Задание 2. Первоначальная настройка сервера SRV </b>.  <br>
-a) Устанавливаем все нужные для достижения нашей цели приложения: <br>
-   - Создаём ssh ключ в моём случаи <b> "~/.ssh/id_rsa.pub" </b> для terraform и ansible. 
+ Устанавливаем все нужные для выполнения задания приложения: <br>
+   - Создаём ssh ключ в моём случае <b> "~/.ssh/id_rsa.pub" </b> для terraform и ansible. 
    - Python3, PIP3, GIT, остальные зависимости.  
    - Устанавливаем Helm и Kubectl
    - Скачиваем Kubespray по адресу: <a href="https://github.com/kubernetes-sigs/kubespray/releases/tag/v2.19.0"> Kubespray. </a>
-   - Ansible (нужную версию Ansible нужно смотреть в документации выбранной версии Kubespray).
+   - Ansible
    - Устанавливаем <b> Terraform </b> по инструкции: <a href="https://cloud.yandex.ru/docs/tutorials/infrastructure-management/terraform-quickstart"> Инструкция по установке и настройке Terraform в Ya облаке</a>. <br>
 b) Создаём папку для нашего проекта. <br>
 c) Делаем git clone проекта в нашу папку. <br>
-<code># git clone https://github.com/Suirus777/skillfactory-diplom.git </code><br>
+<code># git clone https://github.com/awerton89/diplom.git </code><br>
 d) Распоковываем из архива наш скачаный Kubespray в корень проекта. <br>
 <br>
 <b>Задание 3. Начинаем настройку и установку кластера K8S. </b><br> 
@@ -42,14 +38,7 @@ d) Распоковываем из архива наш скачаный Kubespra
 <code># cp private.auto.tfvars.example private.auto.tfvars </code> <br>
    - Открываем файл private.auto.tfvars и вносим наши данные для авторизации Yandex Cloude <br>
 <code>#nano private.auto.tfvars </code> <br> <br>
-<table> <tr><td>(Для информации какие данные нужно вносить)<br>
-● yc_token – OAuth-токен для доступа к API  <br>
-(https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token) <br>
-● yc_cloud_id – ID облака (скопировать из консоли управления) <br>
-● yc_folder_id – ID каталога (скопировать из консоли управления) <br>
-</td></tr></table>
-   - Terraform манифест называется <b> "k8s-cluster.tf" </b> он имеет код согласно задачи, для создания 2 нод кластера K8S Master и Worker. <br>
-Но можно изменить настройки и увеличить количество нод, также добавить ingress ноды. Но согласно задачи нужны 2 ноды.<br>
+   - Terraform манифест <b> "k8s-cluster.tf" </b> имеет код согласно задачи, для создания 2 нод кластера K8S Master и Workerб при внесении изменений настроек можно масштабировать количество нод. <br>
    - Инициализируем Terraform команандой:
 <code> terraform init </code> <br>
    - Если всё было правильно настроено, то инициализация должна пройти без ошибок.  <br>
