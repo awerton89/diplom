@@ -1,0 +1,9 @@
+---
+- name: Instll docker docker-compose Gitlab-CI runnet on srv
+  hosts: srv
+  gather_facts: no
+  become: yes
+  roles:
+   - docker
+   - docker-compose
+   - gitlab-ci 
