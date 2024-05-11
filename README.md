@@ -58,7 +58,7 @@ d) Распоковываем из архива наш скачаный Kubespra
 <img src="https://github.com/Suirus777/skillfactory-diplom/blob/main/images/Terraform_remove_cluster.JPG"> 
 - Yandex Cloud:
 <img src="https://github.com/Suirus777/skillfactory-diplom/blob/main/images/K8S_cluster.JPG">
-<H3>4)Кластер установлен и настроен. Готов к деплою приложения. Спринт 1. закончен.</H3>
+<H3>4)Кластер установлен и настроен. Спринт 1. закончен.</H3>
 <h1> Спринт 2. </h1>
 <H2> Цель: </H2>
 Cобрать и задеплоить приложение из нашего Git в созданный кластер Kubernetes <br>
