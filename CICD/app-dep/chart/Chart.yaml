@@ -1,0 +1,4 @@
+---
+apiVersion: v2
+name: app-dep
+version: v1.1
