@@ -1,0 +1,15 @@
+/.*
+!.gitignore
+/terraform/.terraform.lock.hcl
+/terraform/terraformrc
+/terraform/key.json
+/data
+/CICD/diplom/.git
+/kubespray
+/kubespray_inventory/hosts.ini
+/kubespray_inventory/credentials-velero
+/kubespray_inventory/etc-hosts
+/terraform/private.auto.tfvars
+/terraform/.terraform
+/terraform/*.tfstate
+/terraform/*.tfstate.*
