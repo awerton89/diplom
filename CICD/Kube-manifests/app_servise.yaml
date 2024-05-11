@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    k8s-app: app-dep
+    gitlab: diplom
+     app: app
+  name: app
+  namespace: diplom
+spec:
+  ports:
+  - name: 80-3003
+    port: 80
+    protocol: TCP
+    targetPort: 3003
+  selector:
+    app: app
+  type: LoadBalancer
+status:
+  loadBalancer: {}
