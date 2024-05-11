@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app
+  labels:
+    k8s-app: app-dep
+    gitlab: diplom
+    app: app
+spec:
+  type: NodePort
+  ports:
+    - port: 3003
+      targetPort: 3003 
+#     nodePort: 3003
+  selector:
+    app: app
+
