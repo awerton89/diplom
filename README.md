@@ -1,23 +1,16 @@
 # Дипломный проект.
-SkillFactory / Group32
+SkillFactory / Group45
 <H1> Спринт 1. </H1>
 
-<H2> Цель: </H2>
 
-Создать Kubernets Cluster <br>
-
-<H2> Задача: </H2> 
-
-Опишите инфраструктуру будущего проекта в виде кода с инструкциями по развертке, нужен кластер Kubernetes и служебный сервер (будем называть его srv). <br>
-
-<H3>Задание 1. Выбираем облачный провайдер и инфраструктуру. </h3>
+<H2>Задание 1. Выбираем облачный провайдер и инфраструктуру. </h2>
 
 - В качествет облачного провайдера был выбран <b> Yandex Cloud</b> <br>
 - В качестве описания серверной инфраструктуры в облаке был выбран <b>Terraform</b> <br>
 - В качестве K8S cluster был выбран <b>Kubespray</b> <br>
 - Cluster K8S будет разворачиваться при помощи <b>Ansible</b> <br>
-- Для достижения данной цели использовал отличную инструкцию: <b><a href="https://git.cloud-team.ru/lections/kubernetes_setup/raw/master/presentation.pdf">Установка кластера Kubernetes</a> и <a href="https://www.youtube.com/watch?v=WFXlr0bVTAQ">Youtube</a> </b><br>
-- Так же для автоматизации будем использовать Bash скрипты.<br>
+- Использовал данную инструкцию: <b><a href="https://git.cloud-team.ru/lections/kubernetes_setup/raw/master/presentation.pdf">Установка кластера Kubernetes</a> и <a href="https://www.youtube.com/watch?v=WFXlr0bVTAQ">Youtube</a> </b><br>
+- Так же для автоматизации буду использовать Bash скрипты.<br>
 
 <H4> Установка и первоначальная настройка сервера <b> SRV </b> </H4>
 <b>1. Устанавливаем в Yandex Cloud сервер SRV </b> <br>
